@@ -13,7 +13,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar style="justify-content: space-between">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -29,12 +29,23 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon" *ngIf="!drawer.opened">menu_open</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon" *ngIf="!drawer.opened && !(isHandset$ | async)">menu_open</mat-icon>
         <mat-icon aria-label="Side nav toggle icon" *ngIf="drawer.opened">menu</mat-icon>
       </button>
 
       <img class="logo-img" src="assets/siemens-ag-logo.svg">
     </mat-toolbar>
-    <!-- Add Content Here -->
+
+    <mat-grid-list cols="2" rowHeight="4:3">
+      <mat-grid-tile class="color-base-color-primary80">
+        <h1 class="text-to-be-updated">This text uses <i>.color-base-color-primary80</i> class which defines the following color: <b>#004d73</b>.<br/>
+          We will try to update <b>color-primary-80</b> token in Figma, so the changes can be reflected here.</h1>
+      </mat-grid-tile>
+      <mat-grid-tile class="color-base-color-neutral80">
+        <h1 class="text-to-be-updated">This text uses <i>.color-base-color-neutral80</i> class which defines the following color: <b>#464646</b>.<br/>
+          Though it should stay unchanged <i>(if no changes will be made in Figma)</i>.</h1>
+      </mat-grid-tile>
+    </mat-grid-list>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

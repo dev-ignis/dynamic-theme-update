@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./dynamic-theme.component.scss']
 })
 export class DynamicThemeComponent {
-  public isExpanded: boolean = true;
-
-  public toggleMenu() {
-    this.isExpanded = !this.isExpanded;
-  }
 }
